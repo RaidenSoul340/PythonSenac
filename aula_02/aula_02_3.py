@@ -5,7 +5,8 @@ Cidade = str(input("Digite o nome da cidade: "))
 Largura = 20
 caract_preenchimento = "*"
 
-print(Largura,caract_preenchimento)
+print("*" * 20)
 print(Nome.center(Largura, caract_preenchimento))
-print(Quant_Estrelas.center(Largura, caract_preenchimento))
+print(f"{Quant_Estrelas} Estrela(s)".center(Largura, caract_preenchimento))
 print(Cidade.center(Largura, caract_preenchimento))
+print("*" * 20)
