@@ -1,4 +1,4 @@
-#Estruturas de Repetição
+#Estruturas de Repetição For in
 
 '''
 Permite iterar sobre uma sequência como listas, tuplas, string e dicionarios

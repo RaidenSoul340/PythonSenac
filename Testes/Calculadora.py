@@ -1,9 +1,8 @@
 import time
-nome = str(input("Digite seu nome: "))
 
-print('=' * 83)
-print("Prazer {}, seja bem vindo ao nosso sistema avançado de educação!".format(nome))
-print('=' * 83)
+print('=' * 31)
+print("Bem-vindo a calculadora python")
+print('=' * 31)
 while True:
     
     n1 = float(input("Escolha um numero: "))
@@ -19,6 +18,8 @@ while True:
         3-Multiplicação
         
         4-Divisão
+        
+        5-sair
         
         #=============================#
         """)
@@ -45,8 +46,9 @@ while True:
         time.sleep(1)
         
         if esc >= 5:
-            print("Valor não existe tente novamente")
+            print("Encerrando seu programa")
+            time.sleep(1)
             break
-        time.sleep(1)
-    else: 
-        print("Sistema encerrado volte sempre!")
+    break
+print("volte sempre! :D")
+        
