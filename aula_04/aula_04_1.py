@@ -84,4 +84,11 @@ Vai contar e trazer todas as vogais de uma frase ou letra.
 Vai contar e trazer todas as consoantes de uma frase ou letra.
 '''
 
+ #=============================================#  
+                    #Exemplo 05:
+                    
+for i in range(1, 11):
+    if i == 5:
+        continue
+    print(i)                    
 

@@ -83,20 +83,7 @@ Quando o usuario digitar 'sair' ira interromper codigo consequentemente terminar
     #print(cont)
     #cont += 2
 
-#=============================================# 
-                #Exercicio 05:
 
-nomes = []
-
-while True:
-    name = input("Digite um nome(Caso queira finalizar digite 'sair/Sair'): ")
-    nomes.append(name)
-
-    if name == 'sair':
-        nomes.pop(-1)
-        break
-    
-print(nomes)
 
 
 
