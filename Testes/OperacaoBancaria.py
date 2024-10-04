@@ -40,30 +40,50 @@ Foi criada uma variavel como o nome 'conta' e foi definido o que ele vai puxar d
 #==============================================#
 
 def Depositar_Dinheiro(conta):
-    pagamento = float(input("Digite o seu pagamento do mês:"))
-    newsaldo = conta['saldo'] + pagamento
+    pagamento = float(input("Digite o seu pagamento do mês: "))
+    conta['saldo'] += pagamento 
     print("Atualizando seu saldo!")
     time.sleep(1)
-    print(f"Atualizado! Seu novo saldo é {newsaldo}")
+    print(f"Atualizado! Seu novo saldo é R${conta['saldo']}")
     
-    newsaldo = Verificar_Saldo(conta)
+    return conta
+
+'''
+Quando o cliente quer depositar dinheiro, ele vai digitar o valor que ele vai ser depositado
+com isso é somado e logo em seguida atualizado na 'conta'
+'+=' É uma forma abreviada de escrever uma operação de adição e atribuição ao mesmo tempo.
+'''
+#==============================================#
+
+def Sacar_Dinheiro(conta):
+    saque = float(input("Digite o valor do seu saque: "))
+    if saque <= conta['saldo']:
+        conta['saldo'] -= saque
+        print("Saque realizado com sucesso!")
+        time.sleep(1)
+        print(f"Seu novo saldo é R${conta['saldo']}")
     
-    return newsaldo
+    elif saque > conta['saldo']:
+        print("Saldo insuficiente!")
+        
+    else:
+        print("Ocorreu um erro!")
+    
+    return conta
 
+'''
+Quando o cliente quer sacar dinheiro, ele vai digitar o valor que ele vai ser sacado
+com isso é subtraido e logo em seguida atualizado na 'conta'
+'-=' é uma forma abreviada de escrever uma operação de subtração e atribuição ao mesmo tempo.
+'''
 
-
-
-
-
-
-
-
-
-
+#==============================================#
 
 print("=" * 20)
 print("Banco IA")
 print("=" * 20)
+
+conta = None
 
 while True:
 
@@ -87,7 +107,17 @@ while True:
         Verificar_Saldo(conta)
 
     elif esc == '3':
-        Depositar_Dinheiro(conta)
+        if conta:
+            conta = Depositar_Dinheiro(conta)
+            
+    elif esc == '4':
+        if conta:
+            conta = Sacar_Dinheiro(conta)
+    
+    elif esc == '5':
+        print("Encerrando o Atendimento!")
+        time.sleep(1)
+        break
 
 #======================================================================================#
                                         #Observações                                                    
@@ -104,9 +134,14 @@ Depois mostra na tela as informações do 'cliente'.
 3- A função Verificar_saldo ira printa apenas o 'saldo' do cliente, através da variavel,
 'conta' que ta recebendo a função 'add_conta'
 
+4- A função Depositar_Dinheiro vai pedir para o cliente digitar o valor que ele vai
+ser depositado e logo em seguida somado e atualizado na variavel 'conta'.
+
+5- A função Sacar_Dinheiro vai pedir para o cliente digitar o valor que ele vai ser sacado
+e logo em seguida subtraido e atualizado na variavel 'conta'.
+
 '''
 #======================================================================================#
-
 
 
 
