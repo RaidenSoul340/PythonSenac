@@ -11,8 +11,8 @@ dic_pernambuco = {"Sport" : 41, "Santa Cruz" : 29, "Nautico" : 21}
 #Adicionando um elemento no dicionario (chaves: valor)
 #Onde a chaves é "Salgueiro" e o valor é 1.
 #Note que a chave é passada dentro de colchetes, após o nome do dicionario
-#dic_pernambuco["Salgueiro"] = 1
-#print(dic_pernambuco)
+dic_pernambuco["Salgueiro"] = 1
+print(dic_pernambuco)
 
 #======================================#
 
@@ -73,14 +73,14 @@ dic_paulista = {"Corinthias" : 29, "Santos" : 22, "Palmeiras" : 22}
 #======================================#
             #Exercicio 01:
             
-alunos = {
-    "nome" : "Joao", 
-    "idade" : 16, 
-    "nota" : 8,
-}
+#alunos = {
+#    "nome" : "Joao", 
+#    "idade" : 16, 
+#    "nota" : 8,
+#}
 
-print(alunos["nome"])
-alunos["cursos"] = "Ciência da computação"
-del alunos["nota"]
-print(alunos)
-print("idade" in alunos)
+#print(alunos["nome"])
+#alunos["cursos"] = "Ciência da computação"
+#del alunos["nota"]
+#print(alunos)
+#print("idade" in alunos)

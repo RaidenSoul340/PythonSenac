@@ -123,30 +123,94 @@ Descobrir numeros polidromos aonde ira começar e onde ira termina
 
 #-------------------------------------#
 
-import random
-import time
+#import random
+#import time
 
-print("=" * 18)
-print("Jogo de Advinhação")
-print("=" * 18)
+#print("=" * 18)
+#print("Jogo de Advinhação")
+#print("=" * 18)
 
-time.sleep(1)
-print("Computador está escolhendo um numero de 0 a 20")
-computador = random.randint(0, 20)
-time.sleep(1)
+#time.sleep(1)
+#print("Computador está escolhendo um numero de 0 a 20")
+#computador = random.randint(0, 20)
+#time.sleep(1)
 
+
+#while True:
+#    palpite = int(input("Digite seu palpite: "))
+#    
+#    if palpite > computador:
+#        print("O número escolhido pelo computador é menor!")
+#        
+#    elif palpite < computador:
+#        print("Passou longe meu patrão! É maior que o palpite!")
+#    
+#    elif palpite == computador:
+#        print("Você acerto :D!")
+#        break
+#print("Parabéns pela sua vitoria!")
+
+#------------------------------------------------#
+print("=" * 15)
+print("Mercado Online")
+print("=" * 15)
+
+def adicionar_item(compras):
+    while True:
+        item = input("Digite o item que deseja adicionar (ou 'sair' para terminar): ")
+        if item.lower() == 'sair':
+            break
+        compras.append(item)
+        print(f"'{item}' adicionado à lista.")
+
+def remover_item(compras):
+    while True:
+        if not compras:
+            print("A lista está vazia, não há itens para remover.")
+            break
+        item = input("Digite o item que deseja remover (ou 'sair' para terminar): ")
+        if item.lower() == 'sair':
+            break
+        if item in compras:
+            compras.remove(item)
+            print(f"'{item}' removido da lista.")
+        else:
+            print(f"'{item}' não está na lista.")
+                
+def mostrar_lista(compras):
+    print("Lista de compras:")
+    for item in compras:
+        print(f"- {item}")
+        
 
 while True:
-    palpite = int(input("Digite seu palpite: "))
-    
-    if palpite > computador:
-        print("O número escolhido pelo computador é menor!")
-        
-    elif palpite < computador:
-        print("Passou longe meu patrão! É maior que o palpite!")
-    
-    elif palpite == computador:
-        print("Você acerto :D!")
+    compras = []
+    print("""
+        |=================|
+        |1-Adcione um item|
+        |2-Remover item   |
+        |3-Exibir lista   |
+        |4-Sair           |
+        |=================|
+        """)
+
+    esc = input("Escolha uma opção: ")
+
+    if esc == '1':
+        adicionar_item(compras)
+    elif esc == '2':
+        remover_item(compras)
+    elif esc == '3':
+        mostrar_lista(compras)
+    elif esc == '4':
+        print("Saindo do programa.")
         break
-print("Parabéns pela sua vitoria!")
+    else:
+        print("Opção inválida. Tente novamente.")
+
+
+
+
+
+
 

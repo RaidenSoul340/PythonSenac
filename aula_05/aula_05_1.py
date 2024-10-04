@@ -5,9 +5,6 @@ VANTAGENS:
 
 #Reutilização de Código:
 
-
-
-
 '''
 
 #=================================#
@@ -55,7 +52,7 @@ VANTAGENS:
 #        return "Positivo" #Positivo
 
 #    elif n < 0:
-#        return "Positivo" #Negativo
+#        return "Negativo" #Negativo
 
 #    else:
 #        return "Zero" #ira retorna o valor 0
@@ -70,7 +67,7 @@ VANTAGENS:
 
 #Escopo de Variáveis: Variáveis definidas dentro de uma função só existem dentro dela.
 
-#Escopo Global: Variáveis definidas dora de qualquer função podem ser acessadas em qualquer parte do código
+#Escopo Global: Variáveis definidas de qualquer função podem ser acessadas em qualquer parte do código
 
 #=================================#
 
@@ -88,7 +85,7 @@ VANTAGENS:
 #print(local_var)
 
 '''
-Não vaiavel so existe dentro da função sendo assim ira da erro até ser definido.
+A variavel 'local_var' não existe e nem foi definida fora ou dentro logo ira da erro até ser definida.
 '''
 
 #=================================#
