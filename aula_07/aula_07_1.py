@@ -70,33 +70,33 @@ __init__(construtor)
 '''
 Métodos são funções definidas dentro de uma classe que descrevem os comportamentos de um objeto
 '''
-import datetime
+#import datetime
 
-class Pessoa:
-    def __init__(self, nome, idade):
-        self.nome = nome
-        self.idade = idade
+#class Pessoa:
+#    def __init__(self, nome, idade):
+#        self.nome = nome
+#        self.idade = idade
 
-    def apresentar(self):
-        print(f"Olá, meu nome é {self.nome} e tenho {self.idade} anos.")
-    
-    def AnoATual(self):
-        ano_atual = datetime.datetime.now().year
-        return ano_atual
+#    def apresentar(self):
+#        print(f"Olá, meu nome é {self.nome} e tenho {self.idade} anos.")
 
-    def  ano_nascimento(self):
-        ano_atual = self.ano_nascimento()
-        ano_nascimento = ano_atual - self.idade
-        return ano_nascimento
+#    def AnoATual(self):
+#        ano_atual = datetime.datetime.now().year
+#        return ano_atual
 
-pessoa1 = Pessoa("Maria", 30)
+#    def  ano_nascimento(self):
+#        ano_atual = self.ano_nascimento()
+#        ano_nascimento = ano_atual - self.idade
+#        return ano_nascimento
+
+#pessoa1 = Pessoa("Maria", 30)
 #print(pessoa1.nome) #Saída: Maria
 #print(pessoa1.idade) #Saída: 30
 #print(pessoa1.nascimento) #Saída: 1994
 
-pessoa1.apresentar()
-pessoa1.AnoATual()
-print(f"Eu nasci em {pessoa1.ano_nascimento()}.")
+#pessoa1.apresentar()
+#pessoa1.AnoATual()
+#print(f"Eu nasci em {pessoa1.ano_nascimento()}.")
 
 '''
 Foi criado 'AnoATual()' onde puxa atraves do import datetime, além de usar '.year' que trás ano do calendario.
@@ -106,9 +106,159 @@ Logo após isso ano_nascimento vai subtrair ano_atual - self.idade que é a idad
 '''
 #============================================================================#
 
+#Herança
+'''
+Herança permite que uma classe (subclasse) herda atributos e métodos de outra classe (superclasse)
+'''
 
+#class Animal:
+#    def __init__(self, nome):
+#        self.nome = nome
 
+#    def emitir_som(self):
+#        print(f"{self.nome} diz: barulho!")
 
+#class Dono:
+#    def __init__(self, dono):
+#        self.dono = dono
+
+#    def reclamcao(self):
+#        print(f"{self.dono} diz: silencio!")
+
+#class Cachorro(Animal):
+#    pass
+
+#class Gato(Animal):
+#    pass
+
+#class Pessoa1(Dono):
+#    pass
+
+#class Pessoa2(Dono):
+#    pass
+
+#dog = Cachorro("Rex")
+#cat = Gato("Tom")
+
+#ps1 = Pessoa1("Alex")
+#ps2 = Pessoa2("Vanessa")
+
+#dog.emitir_som()
+#cat.emitir_som()
+#ps1.reclamcao()
+#ps2.reclamcao()
+
+#============================================================================#
+
+#polimorfismo
+'''
+Polimorfismo permite que métodos com o mesmo nome possam ser implementados de maneiras diferentes en classes distintas
+
+'''
+
+#class Animal:
+#    def fazer_som(self):
+#        pass #metodo abstrato
+
+#class Cachorro(Animal):
+#    def fazer_som(self):
+#        print("O cachorro faz Au au!")
+
+#class Gato(Animal):
+#    def fazer_som(self):
+#        print("O gato faz Miau!")
+
+#animais = [Cachorro(), Gato()]
+
+#for animal in animais:
+#    animal.fazer_som()
+
+#--------------------------------------------------------------------------#
+
+#class Automovel:
+#    def som(Self):
+#        pass
+
+#class Moto(Automovel):
+#    def som(Self):
+#        print("A moto faz BIH!")
+
+#class Carro(Automovel):
+#    def som(Self):
+#        print("O carro faz VRUUUMMMMM")
+
+#automoveis = [Moto(), Carro()]
+
+#for veiculo in automoveis:
+#    veiculo.som()
+
+#============================================================================#
+
+#Encapsulamento
+'''
+Fornece convenções e recursos que permitem simular o encapsulamento
+'''
+
+#Propriedades(Getters e Setters)
+'''
+Podemos usar o decorador @property para criar métodos que controlam o acesso a atributos privados, permite adicionar
+lógica ao obter ou definir valores
+'''
+
+#Exemplo
+
+#class Pessoa:
+#    def __init__(self, nome):
+#        self.__nome = nome
+
+#    @property #getters
+#    def  nome(self):
+#        return self.__nome
+
+#    @nome.setter #setters
+#    def nome(self, novo_nome):
+#        if isinstance(novo_nome, str) and novo_nome.strip():
+#            self.__nome = novo_nome
+#        else:
+#            print("nome inválido.")
+
+#Uso da classe
+#pessoa = Pessoa("Alice")
+#print(pessoa.nome)
+#pessoa.nome = "Bob"
+#print(pessoa.nome)
+#pessoa.nome = ""
+
+#============================================================================#
+#Desafio:
+
+class Pessoa:
+    def __init__(self, nome, idade):
+        self.__nome = nome
+        self.__idade = idade
+
+    @property
+    def nome(self):
+        return self.__nome
+    
+    @property
+    def idade(self):
+        return self.__idade
+
+    @nome.setter
+    def exibir_informacoes(self, permitir):
+        if isinstance(permitir, str):
+            self.__nome = permitir
+
+    @idade.setter
+    def exibir_informacoes2(self, permitir2):
+        if isinstance(permitir2, int):
+            self.__idade = permitir2
+
+pessoa = Pessoa("Alice", 30)
+
+#Tentativa de acessar o atributo privado __nome
+print(f"O nome da pessoa {pessoa.nome}, sua idade é {pessoa.idade}")
 
 
 

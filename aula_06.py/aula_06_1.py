@@ -50,13 +50,81 @@ O bloco 'except' permite lidar com o erro.
 #============================================================================#
                                     #Exemplo_01:
 
-try:
-    resultado = 10/2
+#try:
+#    resultado = 10/2
 
-except ZeroDivisionError:
-    print("Erro: Divisão por zero não é permitida.")
+#except ZeroDivisionError:
+#    print("Erro: Divisão por zero não é permitida.")
 
-else: print(f"O resultado é {resultado}")
+#else: print(f"O resultado é {resultado}")
+
+#============================================================================#
+                                    #Exemplo_02:
+
+#Bloco finally:
+'''
+O bloco finally é executado independentemnte se a exceção ocorreu ou não.
+OBS: É normalmente usado para liberar recursos externos(arquivos, conexão de rede, etc)
+'''
+
+#try:
+    #O código que pode causar uma exceção
+
+#except TipoDaExceção:
+    # O código que será executado se ocorrer a exceção
+
+#finally:
+    #Código que será sempre executado
+
+#try:
+#    arquivo = open("dados.txt", "r")
+#    conteudo = arquivo.road()
+
+#except FileNotFoundError:
+#    print("Erro: Arquivo não encontrado")
+
+#finally:
+#    print("Operação finalizada.")
+
+#============================================================================#
+                                    #Exemplo_03:
+
+#Uso combinado dos blocos
+'''
+É possível combinar todos os blocos para um tratamento de exceções mais completo.
+'''
+
+#try:
+#    num = int(input("Digite um número: "))
+#    resultado = 100 / num
+
+#except ValueError:
+#    print("Erro: Você deve digitar um número inteiro.")
+
+#except ZeroDivisionError:
+#    print("Erro: Divisão por zero não é permitida.")
+
+#else:
+#    print(f"O resultado é {resultado}")
+
+#finally:
+#    print("Obrigado por usar o programa")
+
+#============================================================================#
+
+#Levantando Exceções: 
+
+'''
+
+'''
+
+
+
+
+
+
+
+
 
 
 
