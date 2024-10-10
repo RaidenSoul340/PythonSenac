@@ -115,17 +115,82 @@ OBS: É normalmente usado para liberar recursos externos(arquivos, conexão de r
 #Levantando Exceções: 
 
 '''
-
+ÀS vezes, você pode querer gerar(levantar) uma exceção em seu código, quando ocorrer uma
+condição específica.
 '''
 
+#Uso do raise:
+'''
+A instrução raise permite que você force uma exceção a ocorrer
+'''
 
+#raise TipoDaExceção("Mensagem de erro") # type: ignore
 
+#exemplo:
 
+#def verifica_idade(idade):
+#    if idade <18:
+#        raise ValueError("Idade deve ser maior ou igual a 18.")
+#    else:
+#        print("Entrada permitida.")
 
+#try:
+#    verifica_idade(18)
 
+#except ValueError as e:
+#    print(e)
 
+#============================================================================#
 
+#Criação de Exceções Personalizadas:
 
+'''
+Se nenhuma das execeções enbutidas descrever adequadamente o erro que você quer sinalizar,
+você pode criar suas próprias exceções.
+'''
 
+#Exemplo:
 
+#class SaldoInsuficienteError(Exception):
+#    """Exceção levantada quando o saldo é insuficiente para realizar uma transação."""
+#    pass
 
+#def sacar(valor, saldo):
+#    if valor > saldo:
+#        raise SaldoInsuficienteError("Saldo insuficiente para sacar o valor solicitado")
+#    saldo >=valor
+#    return saldo
+
+#try:
+#    saldo_atual = sacar(1500, 1000)
+#except SaldoInsuficienteError as e:
+#    print(e)
+
+'''
+Para que fazer exceções personalizadas?:
+
+Especificidade: Fornece informações mais específicas sobre o erro.
+
+Organização: Ajuda a organizar melhor o código de tratamento de erros.
+
+Legibilidade: Torna o código mais legível e fácil de entender
+'''
+
+#============================================================================#
+                                    #Resumo
+
+'''
+Exceções são eventos anormais que ocorrem durante a execução de um programa
+'''
+
+#O bloco 'try' permite que você teste um bloco de código quanto a erros.
+
+#O bloco 'except' permite lidar com erros.
+
+#O bloco 'else' é executado se nenhuma exceção ocorrer.
+
+#O bloco 'finally' é executado independentemente do resultado bloco 'try'.
+
+#O instrução 'raise' é usada para gerar uma exceção.
+
+#Você pode criar execeção personalizadas definindo uma nova classe herda de 'Exception'.
